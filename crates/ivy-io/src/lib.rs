@@ -1,9 +1,13 @@
 //! `ivy-io` — read what the ecosystem already wrote.
 //!
 //! Compatibility is a hard requirement: safetensors and GGUF must load without
-//! Python. Burst #1 parses headers and validates magic; tensor materialisation
-//! follows.
-#![forbid(unsafe_code)]
+//! Python. Burst #1 materialises f32 tensors from safetensors, parses the GGUF
+//! key/value header, and carries the run-state sidecar a resume needs.
+//!
+//! `unsafe` is denied rather than forbidden because `memmap2`'s map constructors
+//! are `unsafe fn`: the crate needs exactly one audited `mmap` call, in
+//! `safetensors::map_file`, and nothing else.
+#![deny(unsafe_code)]
 
 pub mod gguf;
 pub mod run_state;
