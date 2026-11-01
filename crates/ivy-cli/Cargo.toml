@@ -1,0 +1,22 @@
+[package]
+name = "ivy-cli"
+description = "RustIVY run control: coverage, bench, run, resume, kernel dump. JSON out, agent-first."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "ivy"
+path = "src/main.rs"
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+ivy-kernel.workspace = true
+ivy-cuda.workspace = true
+ivy-compile.workspace = true
+ivy-io.workspace = true
+clap.workspace = true
+serde_json.workspace = true

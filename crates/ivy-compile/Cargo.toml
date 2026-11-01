@@ -1,0 +1,13 @@
+[package]
+name = "ivy-compile"
+description = "RustIVY graph IR, shape buckets and the fusion cache (passes deferred)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+ivy-kernel.workspace = true

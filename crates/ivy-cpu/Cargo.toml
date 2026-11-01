@@ -1,0 +1,13 @@
+[package]
+name = "ivy-cpu"
+description = "RustIVY CPU backend: scalar reference path now, SIMD codegen in burst #2."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-kernel.workspace = true
+rayon.workspace = true

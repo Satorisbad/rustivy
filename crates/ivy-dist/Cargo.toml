@@ -1,0 +1,13 @@
+[package]
+name = "ivy-dist"
+description = "RustIVY distributed: own collectives, 3D parallelism layout, typestate sessions."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+serde.workspace = true

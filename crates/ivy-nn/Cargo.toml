@@ -1,0 +1,13 @@
+[package]
+name = "ivy-nn"
+description = "RustIVY layers: Module trait, LLaMA-arch blocks, parameter registry."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+ivy-autograd.workspace = true

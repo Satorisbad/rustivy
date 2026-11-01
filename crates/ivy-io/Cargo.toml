@@ -1,0 +1,15 @@
+[package]
+name = "ivy-io"
+description = "RustIVY model and run-state I/O: safetensors, GGUF, ONNX, config.json."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+memmap2.workspace = true

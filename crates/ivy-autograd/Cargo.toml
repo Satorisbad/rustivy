@@ -1,0 +1,12 @@
+[package]
+name = "ivy-autograd"
+description = "RustIVY reverse-mode autograd: typed tape, vjp/jvp registry, graph IR."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true

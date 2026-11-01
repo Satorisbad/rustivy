@@ -1,0 +1,22 @@
+[package]
+name = "rustivy"
+description = "A from-scratch Rust reimplementation of PyTorch: typed tensors, own kernels, own collectives."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+ivy-tensor.workspace = true
+ivy-autograd = { workspace = true, optional = true }
+ivy-nn = { workspace = true, optional = true }
+ivy-optim = { workspace = true, optional = true }
+
+[features]
+default = []
+autograd = ["dep:ivy-autograd"]
+nn = ["dep:ivy-nn"]
+optim = ["dep:ivy-optim"]
+full = ["autograd", "nn", "optim"]

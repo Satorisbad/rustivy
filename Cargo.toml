@@ -1,0 +1,44 @@
+[workspace]
+resolver = "3"
+members = ["rustivy", "crates/*"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Satorisbad/rustivy"
+rust-version = "1.99"
+authors = ["RustIVY contributors"]
+
+[workspace.dependencies]
+ivy-core = { path = "crates/ivy-core" }
+ivy-tensor = { path = "crates/ivy-tensor" }
+ivy-kernel = { path = "crates/ivy-kernel" }
+ivy-cuda = { path = "crates/ivy-cuda" }
+ivy-cpu = { path = "crates/ivy-cpu" }
+ivy-metal = { path = "crates/ivy-metal" }
+ivy-spirv = { path = "crates/ivy-spirv" }
+ivy-autograd = { path = "crates/ivy-autograd" }
+ivy-nn = { path = "crates/ivy-nn" }
+ivy-optim = { path = "crates/ivy-optim" }
+ivy-dist = { path = "crates/ivy-dist" }
+ivy-compile = { path = "crates/ivy-compile" }
+ivy-io = { path = "crates/ivy-io" }
+ivy-parity = { path = "crates/ivy-parity" }
+ivy-cli = { path = "crates/ivy-cli" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rayon = "1"
+memmap2 = "0.9"
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+# Perf work compiles per-kernel; keep dev builds fast.
+[profile.dev]
+opt-level = 1
+[profile.dev.package."*"]
+opt-level = 2

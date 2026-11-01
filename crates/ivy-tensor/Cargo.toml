@@ -1,0 +1,12 @@
+[package]
+name = "ivy-tensor"
+description = "RustIVY tensor storage, views, dynamic `Tensor` and typed `Tensor<N>`."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ivy-core.workspace = true
+serde.workspace = true

@@ -1,0 +1,27 @@
+# RustIVY builds its own ML stack. These crates may not appear in any dependency
+# graph here, directly or transitively.
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+
+deny = [
+  { name = "burn", reason = "we own the kernel DSL and the scheduler" },
+  { name = "burn-core", reason = "we own the kernel DSL and the scheduler" },
+  { name = "burn-cubecl", reason = "we own the kernel DSL and the scheduler" },
+  { name = "candle-core", reason = "we own tensors and kernels" },
+  { name = "candle-nn", reason = "we own tensors and kernels" },
+  { name = "candle-metal-kernels", reason = "we own kernels" },
+  { name = "tch", reason = "libtorch is the thing being replaced" },
+  { name = "torch-sys", reason = "libtorch is the thing being replaced" },
+  { name = "dfdx", reason = "we own autograd" },
+  { name = "luminal", reason = "we own the compiler" },
+  { name = "tract-onnx", reason = "we own inference and ONNX import" },
+  { name = "ort", reason = "we own inference" },
+]
+
+[licenses]
+allow = ["MIT", "Apache-2.0", "Apache-2.0 WITH LLVM-exception", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib"]
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
